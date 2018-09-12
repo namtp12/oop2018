@@ -1,12 +1,14 @@
 package week1;
 
 public class Student {
-
+    //1: create fields + 3: set private
     // TODO: khai báo các thuộc tính cho Student
     private String name;
     private String id;
     private String group;
     private String emai;
+    
+    //7: Add 3 constructors
     
     /**
      * Constructor 1
@@ -18,7 +20,7 @@ public class Student {
         group = "INT22041";
         emai = "uet@vnu.edu.vn";
     }
-
+    
     /**
      * Constructor 2
      * @param n
@@ -44,14 +46,14 @@ public class Student {
         group = s.group;
         emai = s.emai;
     }
-
+    //4: getter,setter
     // TODO: khai báo các phương thức getter, setter cho Student
 
     /**
     * getName
     * @return 
     */
-
+    
     public String getName() {
     	return name;
     }
@@ -118,11 +120,14 @@ public class Student {
     public void setEmai(String emai) {
         this.emai = emai;
     }
-
+    
+    //5 : getInfo()
+    
     /**
      * getInfo
      */
     public void getInfo() {
+        //
         // TODO:
         System.out.println(this.name);
         System.out.println(this.id);
