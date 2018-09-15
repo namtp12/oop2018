@@ -8,6 +8,7 @@ public class StudentManagement {
     
     private int numOfStudents = 0;
 
+    //9
     public boolean sameGroup(Student s1, Student s2) {
         // TODO:
         return (s1.getGroup().equals(s2.getGroup()));
