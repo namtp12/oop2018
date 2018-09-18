@@ -5,8 +5,7 @@ public class StudentManagement {
     // TODO: khai báo thuộc tính students là array chứa các đối tượng thuộc lớp Student (max. 100)
     static int MAX = 100;
     Student[] students = new Student[MAX];
-    
-    private int numOfStudents = 0;
+        private int numOfStudents = 0;
 
     //9
     public boolean sameGroup(Student s1, Student s2) {
@@ -35,6 +34,7 @@ public class StudentManagement {
         
         for(int i = 0; i < MAX; i ++) {
             students[i] = new Student();
+            students[i].setName("Student" + Integer.toString(i));
             numOfStudents++;
             if (i % 2 == 0) {
                 students[i].setGroup("INT22042");
@@ -43,15 +43,25 @@ public class StudentManagement {
         String[] groups = new String[MAX];
         int groupSize = 1;
         groups[0] = students[0].getGroup();
-        for(int i = 0; i < MAX; i++) {
-            for(int j = 0; j < groupSize; j++) {
-                if (!groups[j].equals( students[i].getGroup())) {
-                    groupSize++;
-                    groups[groupSize - 1] = students[i].getGroup();
-                }
-            }                
-        } 
         
+        int groupCount;
+        for(int i = 0; i < numOfStudents; i++) {
+            groupCount = 0; //Start a new count of new each student
+            for(int j = 0; j < groupSize; j++) {
+                if (students[i].getGroup().equals( groups[j])) {
+                    groupCount++; //groups has already had the group of student[i]
+                    break;
+                }                
+            }
+            //end of inner loop
+            if (groupCount == 0) {
+                //System.out.println(i);
+                groupSize++;
+                groups[groupSize - 1] = students[i].getGroup(); //add the group of student[i] to the array groups
+            }
+        }
+        
+        //System.out.println("Nam" + groupSize);
         //Print list
         
         for(int i = 0; i < groupSize; i++) {
@@ -70,8 +80,8 @@ public class StudentManagement {
             if (students[i].getID().equals(id)) {
                 for (int j = i; j < MAX; j++) {
                     students[j] = students[j - 1];
-                    MAX--;
                 }
+                MAX--;
                 break;
             }
         }
