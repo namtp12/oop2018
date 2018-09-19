@@ -38,6 +38,7 @@ public class StudentManagement {
             numOfStudents++;
             if (i % 2 == 0) {
                 students[i].setGroup("INT22042");
+                students[i].setID(Integer.toString(i));
             }
         }
         String[] groups = new String[MAX];
@@ -76,12 +77,12 @@ public class StudentManagement {
     void removeStudent(String id) {
         //13
         // TODO: delete students whose id is equal to id param from list
-        for (int i = 0; i < MAX; i++) {
+        for (int i = 0; i < numOfStudents; i++) {
             if (students[i].getID().equals(id)) {
                 for (int j = i; j < MAX; j++) {
                     students[j] = students[j - 1];
                 }
-                MAX--;
+                numOfStudents--;
                 break;
             }
         }
@@ -119,6 +120,9 @@ public class StudentManagement {
         //Verify studentsByGroup() method
         
         sList.studentsByGroup();
+        sList.removeStudent("50");
+        //sList.studentsByGroup();
+        System.out.println(sList.numOfStudents);
     }
 }
 
