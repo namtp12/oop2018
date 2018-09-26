@@ -161,5 +161,6 @@ class Bike {
     
     public void brake() {
         System.out.println("Braking");
+        speed = 0;
     }
 }
