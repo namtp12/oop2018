@@ -31,12 +31,18 @@ public class Fraction {
 		this.denominator = denominator;
     }
     
-    public Fraction reduce() {
+    /*public Fraction reduce() {
         int g = Task1.gcd(this.numerator, this.denominator);
         int newNumerator = this.numerator / g;
         int newDenominator = this.denominator / g;
         Fraction newFrac = new Fraction(newNumerator, newDenominator);
         return newFrac;
+    }*/
+    
+    public void reduce() {
+        int g = Task1.gcd(this.numerator, this.denominator);
+        this.numerator /= g;
+        this.denominator /= g;
     }
 
     public Fraction add(Fraction other) {
@@ -69,6 +75,7 @@ public class Fraction {
         int newNumerator = this.numerator * other.denominator;
         int newDenominator = this.denominator * other.numerator;	
         Fraction result = new Fraction(newNumerator, newDenominator);
+        
         return result;
     }
 

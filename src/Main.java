@@ -10,7 +10,7 @@ public class Main {
         boolean b = f.equals(f2);
         System.out.println(b);
         Fraction f3 = f.add(f2);
-        //f3.reduce();
+        f3.reduce();
         f3.printFraction();
     }
 }

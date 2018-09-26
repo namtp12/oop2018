@@ -153,10 +153,12 @@ class Bike {
     
     public void turnLeft() {
         System.out.println("Turning left");
+        direction = 1;
     }
     
     public void turnRight() {
         System.out.println("Turning right");
+        direction = 2;
     }
     
     public void brake() {
