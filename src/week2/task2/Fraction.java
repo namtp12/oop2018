@@ -82,7 +82,7 @@ public class Fraction {
     @Override
     public boolean equals(Object obj) {
 	//TODO 2C: Phương thức so sánh hai phân số (this và obj), trả về giá trị true hoặc false
-        Fraction f = (Fraction) obj;
+        Fraction f = (Fraction) obj; //cast
         return (this.numerator * f.denominator == this.denominator * f.numerator);
     }
 

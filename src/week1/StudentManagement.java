@@ -88,7 +88,7 @@ public class StudentManagement {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         //2: main method
         // TODO:
         //6: create my student object, call getInfo method
