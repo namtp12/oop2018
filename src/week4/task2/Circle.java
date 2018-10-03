@@ -11,7 +11,8 @@ package week4.task2;
  */
 public class Circle extends Shape {
     private double radius = 0.0;
-    private double PI = 3.14;
+    private final double PI = 3.14;
+    //IDE hint: initializer can be moved to constructor
     
     public Circle() {
         
