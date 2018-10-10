@@ -10,5 +10,20 @@ package week4.task1;
  * @author Administrator
  */
 public class CamSanh extends Cam {
+    private boolean voday = true;
     
+    @Override
+    public String getColor() {
+        return this.color;
+    }
+    
+    /**
+     * 
+     * @param color 
+     */
+    
+    @Override
+    public void setColor(String color) {
+        this.color = color;
+    }
 }

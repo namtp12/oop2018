@@ -14,14 +14,23 @@ public class Circle extends Shape {
     private final double PI = 3.14;
     //IDE hint: initializer can be moved to constructor
     
+    /*
+    hàm khởi tạo mặc định
+    */
     public Circle() {
         
     }
     
+    /*
+    hàm khởi tạo với tham số bán kính
+    */
     public Circle(double radius) {
         this.radius = radius;
     }
     
+    /*
+    hàm khởi tạo phiên bản đồ họa
+    */
     public Circle(double radius, String color, boolean filled) {
         super(color, filled);
         this.radius = radius;

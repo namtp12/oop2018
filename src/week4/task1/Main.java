@@ -6,13 +6,12 @@
 package week4.task1;
 
 /**
- *
+ * class dùng để test week4
  * @author Administrator
  */
 public class Main {
     public static void main() {
         CamSanh c = new CamSanh();
-        c.setColor("Red");
         System.out.println(c.getColor());
     }
 }

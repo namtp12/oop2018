@@ -13,10 +13,16 @@ public class Rectangle extends Shape {
     private double width = 1.0;
     private double length = 1.0;
     
+    /*
+    hàm khởi tạo mặc định
+    */
     public Rectangle() {
         
     }
     
+    /*
+    hàm khởi tạo 2 tham số
+    */
     public Rectangle(double width, double length) {
         this.width = width;
         this.length = length;

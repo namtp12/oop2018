@@ -13,10 +13,16 @@ public class Shape {
     private String color = "red";
     private boolean filled = true;
     
+    /*
+    hàm khởi tạo mặc định
+    */
     public Shape() {
         
     }
     
+    /*
+    hàm khởi tạo truyền tham số phiên bản đồ họa (nếu có)
+    */
     public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;

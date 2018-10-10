@@ -11,14 +11,23 @@ package week4.task2;
  */
 public class Square extends Rectangle {
     
+    /*
+    hàm khởi tạo mặc định
+    */
     public Square() {
         
     }
     
+    /*
+    gọi hàm khởi tạo lớp cha
+    */
     public Square(double size) {
         super(size, size);
     }
     
+    /*
+    gọi hàm khởi tạo lớp cha
+    */
     public Square(double size, String color, boolean filled) {
         super(size, size, color, filled);
     }

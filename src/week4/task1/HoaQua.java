@@ -6,7 +6,7 @@
 package week4.task1;
 
 /**
- *
+ * 
  * @author Administrator
  */
 public abstract class HoaQua {
@@ -16,7 +16,7 @@ public abstract class HoaQua {
     protected String color;
     
     /**
-     * 
+     * trả về giá trị của price
      * @return 
      */    
     public int getPrice() {
@@ -24,7 +24,7 @@ public abstract class HoaQua {
     }
     
     /**
-     * 
+     * thiết lập giá hoa quả
      * @param price 
      */
     
@@ -33,7 +33,7 @@ public abstract class HoaQua {
     }
     
     /**
-     * 
+     * lấy số lượng 
      * @return 
      */
     
@@ -42,7 +42,7 @@ public abstract class HoaQua {
     }
     
     /**
-     * 
+     * thiết lập số lượng
      * @param amount 
      */
     
@@ -51,7 +51,7 @@ public abstract class HoaQua {
     }
     
     /**
-     * 
+     * lấy thông tin về nguồn gốc
      * @return 
      */
     
@@ -60,7 +60,7 @@ public abstract class HoaQua {
     }
     
     /**
-     * 
+     * thiết lập thông tin về nguồn gốc
      * @param origin 
      */
     
@@ -69,7 +69,7 @@ public abstract class HoaQua {
     }
     
     /**
-     * 
+     * trả về màu của loại quả tương ứng
      * @return 
      */
     
