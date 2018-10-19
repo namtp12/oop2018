@@ -13,7 +13,7 @@ import java.awt.Graphics;
  */
 public class Circle extends Shape {
     private double x, y;
-    private double radius = 0.0;
+    private int radius;
     private final double PI = 3.14;
     //IDE hint: initializer can be moved to constructor
     
@@ -21,16 +21,16 @@ public class Circle extends Shape {
         
     }
     
-    public Circle(double radius) {
+    public Circle(int radius) {
         this.radius = radius;
     }
     
-    public Circle(double radius, String color, boolean filled) {
+    public Circle(int radius, String color, boolean filled) {
         super(color, filled);
         this.radius = radius;
     }
     
-    public Circle(double x, double y, double radius) {
+    public Circle(double x, double y, int radius) {
         this.x = x;
         this.y = y;
         this.radius = radius;
@@ -53,7 +53,7 @@ public class Circle extends Shape {
      * 
      * @param radius 
      */
-    public void setRadius(double radius) {
+    public void setRadius(int radius) {
         this.radius = radius;
     }
     
@@ -82,11 +82,6 @@ public class Circle extends Shape {
         return null;
     }
     
-    public void paintCircle(Graphics g) {
-        g.drawRect((int)x, (int)y, 1, 1); 
-        g.drawOval((int)x - 40, (int)y - 40, 80, 80);
-    }
-    
     public void fillOval(int x, int y, int width, int height) {
         
     }
@@ -96,8 +91,28 @@ public class Circle extends Shape {
         this.y = y;
     }
     
-    public void move() {
-        x++;
-        y++;
+    private void paintCircle(Graphics g) {
+        g.drawOval((int)x - 40, (int)y - 40, 80, 80);
     }
+    
+    @Override
+    public void draw(Graphics g1) {
+        paintCircle(g1);
+    }    
+    @Override
+    public void moveTo() {
+        x += vx;
+        y += vy;
+    }
+    
+    @Override
+    public void bounce() {
+        if ((x - radius) <= 0 || (x + radius) >= horBound) {
+            vx = -vx;
+        }
+        if ((y - radius) <= 0 || (y + radius) >= verBound) {
+            vy = -vy;
+        }
+    }
+    
 }

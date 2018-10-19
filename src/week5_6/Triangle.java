@@ -11,7 +11,7 @@ import java.awt.Graphics;
  *
  * @author Administrator
  */
-public class Triangle {
+public class Triangle extends Shape {
     Point p1;
     Point p2;
     Point p3;
@@ -40,9 +40,18 @@ public class Triangle {
         
     }
     
-    public void paintTriangle(Graphics g) {
-        g.drawPolyline(xPoints, yPoints, nPoints);
+    @Override
+    public void bounce() {
+        
     }
     
+    @Override
+    public void moveTo() {
+        
+    }
     
+    @Override
+    public void draw(Graphics g) {
+        g.drawPolyline(xPoints, yPoints, nPoints);
+    }
 }

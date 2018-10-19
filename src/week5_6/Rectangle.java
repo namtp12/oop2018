@@ -5,34 +5,63 @@
  */
 package week5_6;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author Administrator
  */
 public class Rectangle extends Shape {
-    private double width = 1.0;
-    private double length = 1.0;
+    protected int width = 1;
+    protected int height = 1;
     
     public Rectangle() {
         
     }
     
-    public Rectangle(double width, double length) {
+    public Rectangle(int x, int y, int width, int height) {
+        super(x, y);
         this.width = width;
-        this.length = length;
+        this.height = height;
     }
     
-    public Rectangle(double witdth, double length, String color, boolean filled) {
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+    
+    public Rectangle(int witdth, int height, String color, boolean filled) {
         super(color, filled);
         this.width = width;
-        this.length = length;
+        this.height = height;
+    }
+    
+    @Override
+    public void moveTo() {
+        x += vx;
+        y += vy;
+    }
+    
+    @Override
+    public void bounce() {
+        if (x  <= 0 || Math.abs(x + width) >= horBound ) {
+            vx = -vx;
+        }
+        if (y <= 0 || Math.abs(y + height) >= verBound) {
+            vy = -vy;
+        }
+    }
+    
+    @Override
+    public void draw(Graphics g) {
+        g.drawRect(x, y, width, height);
     }
     
     /**
      * 
      * @return 
      */
-    public double getWidth() {
+    public int getWidth() {
         return this.width;
     }
     
@@ -40,7 +69,7 @@ public class Rectangle extends Shape {
      * 
      * @param width 
      */
-    public void setWidth(double width) {
+    public void setWidth(int width) {
         this.width = width;
     }
     
@@ -48,32 +77,32 @@ public class Rectangle extends Shape {
      * 
      * @return 
      */
-    public double getLength() {
-        return this.length;
+    public int getHeight() {
+        return this.height;
     }
     
     /**
      * 
-     * @param length 
+     * @param height 
      */
-    public void setLength(double length) {
-        this.length = length;
-    }
-    
-    /**
-     * 
-     * @return 
-     */
-    public double getArea() {
-        return width * length;
+    public void setHeight(int height) {
+        this.height = height;
     }
     
     /**
      * 
      * @return 
      */
-    public double getPerimeter() {
-        return 2 * (width + length);
+    public int getArea() {
+        return width * height;
+    }
+    
+    /**
+     * 
+     * @return 
+     */
+    public int getPerimeter() {
+        return 2 * (width + height);
     }
     
     /**

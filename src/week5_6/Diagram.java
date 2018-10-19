@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -23,17 +24,44 @@ public class Diagram extends JFrame implements Runnable {
     
     Circle c;
     Thread t;
-    
+    Rectangle r;
+    ArrayList<Shape> shapeList;
     
     public Diagram() {
+        shapeList = new ArrayList<>();
         setSize(600, 600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        c = new Circle(0, 0);
+        ArrayList<Layer> layerList = new ArrayList<>();         
+        Layer l1 = new Layer();
+        layerList.add(l1);            
+        
+        l1 = new Layer();
+        
+        c = new Circle(50, 50, 30);
+        c.setVelo(4, 5);
+        
+        r = new Rectangle(50, 50, 30, 45);
+        r.setVelo(5, 6);
+        
+        shapeList.add(c);
+        shapeList.add(r);
+        //l1.add(c);
+        //l1.add(r);
         
         t = new Thread(this);
         t.start();
         setVisible(true);
+    }
+    
+    public void deleteTriangle() {
+        
+        for (Shape s : shapeList) {
+            if (s instanceof Triangle) {
+                
+        }
+        }
+        
     }
     
     public static void main() {
@@ -43,11 +71,16 @@ public class Diagram extends JFrame implements Runnable {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        c.paintCircle(g);
+        for(Shape s : shapeList) {
+            s.draw(g);
+        }
     }
     
     public void move() {
-        c.move();
+        c.moveTo();
+        r.moveTo();
+        c.bounce();
+        r.bounce();
         repaint();
     }
     
@@ -56,7 +89,7 @@ public class Diagram extends JFrame implements Runnable {
         while(true) {
             move();
             try {
-                Thread.sleep(15);
+                Thread.sleep(20);
             }
             catch (InterruptedException e) {
                 

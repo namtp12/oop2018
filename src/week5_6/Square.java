@@ -5,46 +5,63 @@
  */
 package week5_6;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author Administrator
  */
 public class Square extends Rectangle {
     
+    protected int size;
+    
     public Square() {
         
     }
     
-    public Square(double size) {
+    public Square(int size) {
         super(size, size);
+        this.size = size;
     }
     
-    public Square(double size, String color, boolean filled) {
+    public Square(int size, String color, boolean filled) {
         super(size, size, color, filled);
+        this.size = size;
+    }
+    
+    @Override
+    public void moveTo() {
+        x += 3;
+        y += 2;
+    }
+    
+    @Override
+    public void draw(Graphics g) {
+        g.drawRect(x, y, size, size);
     }
     
     /**
      * 
      * @return 
      */
-    public double getSide() {
-        return super.getLength();
+    public int getSide() {
+        return super.getHeight();
     }
     
     /**
      * 
      * @param size 
      */
-    public void setSide(double size) {
+    public void setSide(int size) {
         super.setWidth(size);
-        super.setLength(size);
+        super.setHeight(size);
     }
     /**
      * 
      * @param size 
      */
     @Override
-    public void setWidth(double size) {
+    public void setWidth(int size) {
         super.setWidth(size);
     }
     
@@ -53,8 +70,8 @@ public class Square extends Rectangle {
      * @param size 
      */
     @Override
-    public void setLength(double size) {
-        super.setLength(size);
+    public void setHeight(int size) {
+        super.setHeight(size);
     }
     
     /**

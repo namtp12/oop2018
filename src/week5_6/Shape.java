@@ -5,11 +5,21 @@
  */
 package week5_6;
 
+import java.awt.Component;
+import java.awt.Graphics;
+
 /**
  *
  * @author Administrator
  */
-public class Shape {
+public abstract class Shape extends Component {
+    
+    protected int verBound = 600, horBound = 600;
+    
+    protected int x, y;
+    
+    protected int vx, vy;
+            
     private String color = "red";
     private boolean filled = true;
     
@@ -17,10 +27,30 @@ public class Shape {
         
     }
     
+    public Shape(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
     public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
+    
+    public void setVelo(int vx, int vy) {
+        this.vx = vx;
+        this.vy = vy;
+    }
+    
+    /**
+     *
+     * @param g
+     */
+    public abstract void draw(Graphics g);
+    
+    public abstract void moveTo();
+    
+    public abstract void bounce();
     
     /**
      * 
@@ -62,4 +92,5 @@ public class Shape {
     public String toString() {
         return null;
     }
+    
 }
