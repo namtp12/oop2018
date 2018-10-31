@@ -5,6 +5,9 @@
  */
 package week7.task2;
 
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
 /**
  *
  * @author Administrator
@@ -46,6 +49,9 @@ public class Task2Test {
         int[] arr = new int[30];
         Task2.ArrayIndexOutOfBounds2(arr);
         
+        //Arithmetic 
+        Task2.Arithmetic(2, 0);
+        
         // TODO: Arithmetic, ClassCast, IO, FileNotFound
         
         // ClassCast
@@ -57,7 +63,33 @@ public class Task2Test {
         
         Object newObj = new Integer(5);
         Task2.ClassCast(newObj);
-        Task2.ClassCast2(newObj);
+        
+        //Testing
+        //Task2.ClassCast2(newObj);
+        
+        //IOException
+        try {
+            Task2.IO();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            e.getMessage();
+            System.err.println("IOException");
+        }
+        //FileNotFoundException
+        try {
+            Task2.FileNotFound();
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+            e.getMessage();
+            System.out.println("FileNotFoundException");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            e.getMessage();
+            System.out.println("FileNotFoundException");
+        }
     }
 }
 

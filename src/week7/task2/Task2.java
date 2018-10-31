@@ -7,7 +7,9 @@ import java.lang.ClassCastException;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 
-
+import java.io.File;
+import java.io.FileReader;
+import java.io.BufferedReader;
 
 public class Task2 {
     public static void NullPointer(Object obj) throws NullPointerException {
@@ -25,8 +27,14 @@ public class Task2 {
     
     public static void ArrayIndexOutOfBounds2(int arr[]) {
         try {
-            for(int i = 0; i < arr.length; i+=2) {
-                arr[i] = i;
+            // Assume we are initialize a part of an array from the last element
+            // to the i-th element, whereas i is calculated before to
+            // implemenent a developing algorithm
+            // Since we usually do not check the value of i, some case it'll 
+            // cause the ArrayOutOfBounds
+            int i = 10 + 3 - 45;
+            for(int j = arr.length - 1; j >= i; j--) {
+                arr[j] = 0;
             }
         }
         catch (ArrayIndexOutOfBoundsException e) {
@@ -36,8 +44,15 @@ public class Task2 {
         }
     }
     
-    public static void Arithmetic() {
-        
+    public static void Arithmetic(double divident, double divisor) {
+        try {
+            double quotient = divident / divisor;
+        }
+        catch (ArithmeticException e) {
+            e.printStackTrace();
+            e.getMessage();
+            System.err.println("ArithmeticException");
+        }
     }
     
     public static void ClassCast(Object obj) {
@@ -54,20 +69,47 @@ public class Task2 {
         }
     }
     
-    public static void ClassCast2(Object obj) {
+    public static void ClassCast2(Object obj) throws ClassCastException {
         // Cast obj to String
         if (!(obj instanceof String)) {
-            System.out.print("Nam");
-            throw new ClassCastException(); // this line ends the program
-            //System.out.print("Nam");
+            //throw new ClassCastException();
+            // this above line ends the program, so we 'll comment it
         }
     }
     
-    public static void IO() {
-        
+    public static void IO() throws IOException {
+        File file = new File("\1.txt");
+        FileReader reader = new FileReader(file);
+        BufferedReader buf = new BufferedReader(reader);
+        try {
+            String line;
+            while ((line = buf.readLine()) != null) {
+                System.out.println(line);
+            }
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+            e.getMessage();
+            System.err.print("IOException");
+        }
     }
     
-    public static void FileNotFound() {
-        
+    
+    // I do not understand this!!
+    public static void FileNotFound() throws IOException {
+        File file = new File("\2.txt");
+        FileReader reader = new FileReader(file);
+        BufferedReader buf = new BufferedReader(reader);
+        try {
+            String line;
+            while ((line = buf.readLine()) != null) {
+                System.out.println(line);
+            }
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+            e.getMessage();
+            System.err.println("FileNotFoundException");
+        }
     }
 }

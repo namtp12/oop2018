@@ -11,6 +11,7 @@ package week7.task1;
  */
 public class ExpressionTest {
     public static void main() {
+        // TODO: Group declaration of Numeral or any 
         Expression e1 = new Numeral(10);
         Expression e2 = new Square(e1);
         Expression e3 = new Numeral(1);
@@ -22,5 +23,15 @@ public class ExpressionTest {
         Expression e9 = new Square(e8);
         int res = e9.evaluate();
         System.out.println(res);
+        System.out.println(e9.toString());
+        
+        try {
+            Expression division = new Division(e1, e3);
+        }
+        catch (ArithmeticException e) {
+            e.printStackTrace();
+            e.getMessage();
+            System.err.println("Can not divide by zero");
+        }
     }
 }
