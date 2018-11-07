@@ -5,6 +5,8 @@
  */
 package week9;
 
+import java.io.File;
+
 /**
  *
  * @author Administrator
@@ -12,7 +14,16 @@ package week9;
 public class TestUtils {
     public static void main() {
         String filePath = "src\\week9\\file.txt";
+        String folderPath = "src\\week9";
         Utils.readContentFromFile(filePath);
         Utils.writeContentToFile(filePath);
+        Utils.appendContentToFile(filePath);
+        //Find file
+        try {
+            File f = Utils.findFileByName(folderPath,"file.txt");
+            System.out.println(f.getName());
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 }
