@@ -9,6 +9,8 @@ public class Main {
         //week5_6.Main.main();
         //week7.task1.ExpressionTest.main();
         //week7.task2.Task2Test.main();
-        week9.TestUtils.main();
+        //week9.TestUtils.main();
+        //week10.TestTask1.main();
+        week10.TestTask2.main();
     }
 }

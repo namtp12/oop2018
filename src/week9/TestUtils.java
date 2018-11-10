@@ -20,10 +20,11 @@ public class TestUtils {
         Utils.appendContentToFile(filePath);
         //Find file
         try {
-            File f = Utils.findFileByName(folderPath,"file.txt");
-            System.out.println(f.getName());
+            //File f = Utils.findFileByName(folderPath,"file.txt");
+            //System.out.println(f.getName());
         } catch (NullPointerException e) {
             e.printStackTrace();
+            System.err.println("Khong tim thay file trong folder");
         }
     }
 }

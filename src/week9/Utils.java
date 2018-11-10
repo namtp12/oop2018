@@ -66,7 +66,9 @@ public class Utils {
                     res += "\r\n"; // eol character
                     //pw.write(line);
                 }
-                System.out.println(res);
+                
+                res.replace("\0", "");
+                
                 pw.write(res);
             } catch (IOException ex) {
                 Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
