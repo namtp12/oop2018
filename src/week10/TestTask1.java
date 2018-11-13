@@ -5,6 +5,8 @@
  */
 package week10;
 
+import java.util.List;
+
 /**
  *
  * @author Administrator
@@ -15,6 +17,9 @@ public class TestTask1 {
     
     public static void main() {
         path = "src\\week9\\Utils.java";
-        Task1.getAllFunctions(path);
+        List<String> allFunc = Task1.getAllFunctions(path);
+        for(String s : allFunc) {
+            System.out.println(s);
+        }
     }
 }
