@@ -64,6 +64,30 @@ public class Task1 {
         return res;
     }
     
+    public static String findFunctionByName(String name) {
+        String res = null;
+        
+        String filePath = "src\\week9\\Utils.java";
+        List<String> toPerform = Task1.getStringFromFile(filePath);
+        for(String s : toPerform) {
+            if(s.contains(name) && s.contains("(") && 
+                    (s.contains("public") || s.contains("protected") || s.contains("private"))
+                    ) {
+                String tmp = s;
+                String methName = tmp.substring(0, tmp.lastIndexOf("("));
+                // String contains the param list
+                String params = tmp.substring(tmp.lastIndexOf("(", tmp.lastIndexOf(")")));
+                
+                // TODO: Perform params string
+                
+                res = methName + params;
+                return res;
+            }
+        }
+        
+        return res;
+    }
+    
     private static ArrayList<String> getStringFromFile(String path) {
         ArrayList<String> res = null;
         String line = null; // doesn't cause NullPointerException, although Strings are immutable
