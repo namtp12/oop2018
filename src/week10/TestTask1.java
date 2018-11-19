@@ -18,7 +18,7 @@ public class TestTask1 {
     public static void main() {
         path = "src\\week9\\Utils.java";
         
-        String str = Task1.findFunctionByName("writeContentToFile");
+        String str = Task1.findFunctionByName("findFileByName");
         System.out.println(str);
         
         List<String> allFunc = Task1.getAllFunctions(path);

@@ -65,7 +65,7 @@ public class Task1 {
     }
     
     public static String findFunctionByName(String name) {
-        String res = null;
+        String res = "Not found!";
         
         String filePath = "src\\week9\\Utils.java";
         List<String> toPerform = Task1.getStringFromFile(filePath);
@@ -80,7 +80,22 @@ public class Task1 {
                 
                 // TODO: Perform params string
                 
+                params = params.substring(0, params.lastIndexOf(")") + 1);
+                /*
+                String s1;
+                ArrayList<String> t = new ArrayList<>();
+                s1 = params.substring(0, params.indexOf(","));
+                while (params.contains(",")) {
+                    s1 = params.substring(0, params.indexOf(","));
+                    t.add(s1);
+                }
+                
+                for(String s2 : t) {
+                    System.out.println(s2);
+                }
+                */
                 res = methName + params;
+                
                 return res;
             }
         }
