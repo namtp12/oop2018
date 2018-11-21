@@ -8,20 +8,40 @@ public class Task2 {
     boolean isDouble = false;
     boolean isInt = false;
     boolean isString = false;
-    public static <T> T findMax (List<T> list) {
-        T max = list.get(0);
-        if (!list.isEmpty()) {
+    public static <T extends Comparable> T findMax (List<T> list) {
+        //T max = null;
+        T max;
+        if (list.isEmpty() || list == null) {
+            return null;
+        } else {
             max = list.get(0);
         }
         for(T t : list) {
-            // if(t.getClass().getName().equals("Double")) { is not working
-            if(t instanceof Double) {
+            if(max.compareTo(t) < 0) {
                 max = t;
             }
         }
         return max;
     }
     
+    public static <T extends Comparable> T findMax (T[] list) {
+        //T max = null;
+        T max;
+        if (list.length == 0 || list == null) {
+            return null;
+        } else {
+            max = list[0];
+        }
+        for(T t : list) {
+            if(max.compareTo(t) < 0) {
+                max = t;
+            }
+        }
+        return max;
+    }
+    
+    // This is only used with others user-defined abstract data types for T
+    // Since primitive data types have been supported comparable interface
     private <T> boolean isBiggerThan (T other) {
         return false;
     }
