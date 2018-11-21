@@ -15,13 +15,13 @@ import java.util.List;
 public class TestTasks {
     public static void main() {
         // findMax() is not working with collection data type (list)
-        /*
+        
         List<Double> list = new ArrayList<>();
         for(int i = 0; i < 1000; i++) {
             double d = week10.Task2.getRandomValue();
             list.add(d);
         }
-        */
+        
         
         Double[] list2 = new Double[1000];
         for(int i = 0; i < 1000; i++) {
@@ -32,6 +32,8 @@ public class TestTasks {
         Task1.sort(list2);
         
         Double d = Task2.findMax(list2);
+        // the diamond operator is compulsory when you use collection
+        Double d2 = Task2.<Double>findMax(list);
         for(int i = 0; i < 10; i++) {
             for(int j = 0; j < 100; j++) {
                 //System.out.print(list.get(i * 100 + j)+ " ");
@@ -40,5 +42,6 @@ public class TestTasks {
             System.out.println();
         }
         System.out.println(d);
+        System.out.println(d2);
     }
 }
