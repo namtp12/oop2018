@@ -29,7 +29,7 @@ public class Task2 {
     }
     
     // To generate in a different range, change the param in the random statement
-    private static double getRandomValue() {
+    public static double getRandomValue() {
         double x = Math.random() * 1000 + 0; // random() method generates a random double number in range [0, 1]
         return x;
     }
