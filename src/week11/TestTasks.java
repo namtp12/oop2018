@@ -29,6 +29,8 @@ public class TestTasks {
             list2[i] = d;
         }
         
+        Task1.sort(list2);
+        
         Double d = Task2.findMax(list2);
         for(int i = 0; i < 10; i++) {
             for(int j = 0; j < 100; j++) {
