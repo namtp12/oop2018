@@ -29,8 +29,9 @@ public class TestTasks {
             list2[i] = d;
         }
         
+        //Task1.sort(list);
         Task1.sort(list2);
-        
+                
         Double d = Task2.findMax(list2);
         // the diamond operator is compulsory when you use collection
         Double d2 = Task2.<Double>findMax(list);
@@ -42,6 +43,13 @@ public class TestTasks {
             System.out.println();
         }
         System.out.println(d);
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 100; j++) {
+                System.out.print(list.get(i * 100 + j)+ " ");
+                //System.out.print(list2[i * 100 + j] + " ");
+            }
+            System.out.println();
+        }
         System.out.println(d2);
     }
 }
